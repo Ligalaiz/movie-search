@@ -13,7 +13,7 @@ export default function watchListHandlerUtils() {
 
     if ({}.hasOwnProperty.call(target.dataset, 'btnDetail')) {
       const imdbID = target.dataset.btnDetail;
-      window.location.hash = `${process.env.APP_FB_PATH}#detail/`;
+      window.location.hash = '#detail/';
       setTimeout(() => {
         detailRender(imdbID);
         detailHandlerUtils(imdbID);

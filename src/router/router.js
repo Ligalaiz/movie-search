@@ -8,27 +8,27 @@ import {
 
 const routes = [
   {
-    path: `${process.env.APP_FB_PATH}#`,
+    path: '#',
     component: searchLayout,
     meta: { auth: true },
   },
   {
-    path: `${process.env.APP_FB_PATH}#auth/`,
+    path: '#auth/',
     component: authLayout,
     meta: { auth: false },
   },
   {
-    path: `${process.env.APP_FB_PATH}#watchList/`,
+    path: '#watchList/',
     component: watchListLayout,
     meta: { auth: true },
   },
   {
-    path: `${process.env.APP_FB_PATH}#detail/`,
+    path: '#detail/',
     component: detailLayout,
     meta: { auth: true },
   },
   {
-    path: `${process.env.APP_FB_PATH}#error/`,
+    path: '#error/',
     component: errorLayout,
     meta: { auth: false },
   },

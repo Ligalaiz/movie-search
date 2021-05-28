@@ -15,15 +15,15 @@ export default function state() {
   window.addEventListener('hashchange', () => {
     if (getUtils('jwt-token')) {
       switch (window.location.hash) {
-        case `${process.env.APP_FB_PATH}#watchList/`:
+        case '#watchList/':
           watchListRenderUtils({ filter: getUtils('searchWatch') });
           watchListHandlerUtils();
           checkSearchStorageUtils('searchWatch');
           break;
-        case `${process.env.APP_FB_PATH}#auth/`:
+        case '#auth/':
           setTimeout(() => authFormHanlerUtils());
           break;
-        case `${process.env.APP_FB_PATH}#detail/`:
+        case '#detail/':
           setTimeout(() => {
             detailRenderUtils(getUtils('last'));
             detailHandlerUtils(getUtils('last'));

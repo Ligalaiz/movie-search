@@ -21,7 +21,7 @@ const app = new App(getUtils('search') ? getUtils('search') : undefined);
 if (getUtils('jwt-token')) {
   app.start();
 } else {
-  window.location.hash = `${process.env.APP_FB_PATH}#auth/`;
+  window.location.hash = '#auth/';
 }
 
 window.addEventListener('load', () => {
@@ -33,13 +33,13 @@ window.addEventListener('load', () => {
     menuHandlerUtils();
     const swiper = new Swiper('.swiper-container', initializationSwiperUse);
     switch (window.location.hash) {
-      case `${process.env.APP_FB_PATH}#watchList/`:
+      case '#watchList/':
         watchListRenderUtils({ filter: getUtils('searchWatch') });
         watchListHandlerUtils();
         checkSearchStorageUtils('searchWatch');
         break;
-      case `${process.env.APP_FB_PATH}#detail/`:
-        window.location.hash = `${process.env.APP_FB_PATH}#`;
+      case '#detail/':
+        window.location.hash = '#';
         break;
       default:
         searchHadlerUtils();
