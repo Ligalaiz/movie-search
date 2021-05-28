@@ -33,8 +33,16 @@ const routes = [
     meta: { auth: false },
   },
 ];
-const parseLocation = () => window.location.hash || `${process.env.APP_FB_PATH}#`;
-const findComponentByPath = (path, routes) => routes.find((r) => r.path.match(new RegExp(`^\\${path}$`, 'gmi'))) || undefined;
+const parseLocation = () => window.location.hash || '#';
+
+function findComponentByPath(path, routes) {
+  return routes.find((r) => {
+    const a = document.createElement('a');
+    a.href = r.path;
+    const result = a.hash || '#';
+    return result === path;
+  }) || undefined;
+}
 
 const router = () => {
   const path = parseLocation();
