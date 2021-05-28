@@ -12,5 +12,16 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'default-case': 'off',
+    'no-useless-return': 'off',
+    'no-unused-vars': 'off',
+    'arrow-body-style': 'off',
+    'import/no-duplicates': 'off',
+    'no-shadow': 'off',
+    'consistent-return': 'off',
+    'no-param-reassign': 'off',
+    'no-nested-ternary': 'off',
+    'no-else-return': 'off',
+    'no-console': 'off',
   },
 };
