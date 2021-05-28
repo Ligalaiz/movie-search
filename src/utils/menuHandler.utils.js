@@ -11,15 +11,15 @@ export default function menuHandlerUtils() {
       if (e.target.dataset.link) e.preventDefault();
       switch (e.target.dataset.link) {
         case 'main':
-          window.location.hash = `${process.env.APP_FB_PATH}/#`;
+          window.location.hash = `${process.env.APP_FB_PATH}#`;
           initializationSearchPageUtils();
           break;
         case 'account':
-          window.location.hash = `${process.env.APP_FB_PATH}/#watchList/`;
+          window.location.hash = `${process.env.APP_FB_PATH}#watchList/`;
           break;
         case 'logout':
           AuthModules.logout();
-          window.location.hash = `${process.env.APP_FB_PATH}/#auth/`;
+          window.location.hash = `${process.env.APP_FB_PATH}#auth/`;
           setTimeout(() => authFormHanlerUtils());
           break;
       }

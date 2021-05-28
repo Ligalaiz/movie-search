@@ -30,7 +30,7 @@ export default {
       });
 
       this.setToken(data.idToken);
-      window.location.hash = `${process.env.APP_FB_PATH}/#`;
+      window.location.hash = `${process.env.APP_FB_PATH}#`;
       initializationSearchPageUtils();
     } catch (e) {
       throw new Error(e.message);

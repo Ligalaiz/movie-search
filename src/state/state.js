@@ -15,15 +15,15 @@ export default function state() {
   window.addEventListener('hashchange', () => {
     if (getUtils('jwt-token')) {
       switch (window.location.hash) {
-        case `${process.env.APP_FB_PATH}/#watchList/`:
+        case `${process.env.APP_FB_PATH}#watchList/`:
           watchListRenderUtils({ filter: getUtils('searchWatch') });
           watchListHandlerUtils();
           checkSearchStorageUtils('searchWatch');
           break;
-        case `${process.env.APP_FB_PATH}/#auth/`:
+        case `${process.env.APP_FB_PATH}#auth/`:
           setTimeout(() => authFormHanlerUtils());
           break;
-        case `${process.env.APP_FB_PATH}/#detail/`:
+        case `${process.env.APP_FB_PATH}#detail/`:
           setTimeout(() => {
             detailRenderUtils(getUtils('last'));
             detailHandlerUtils(getUtils('last'));
@@ -38,7 +38,7 @@ export default function state() {
       menuHandlerUtils();
       initalizationMobileMenu();
     } else {
-      window.location.href = `${process.env.APP_FB_PATH}/#auth/`;
+      window.location.href = `${process.env.APP_FB_PATH}#auth/`;
     }
   });
 }

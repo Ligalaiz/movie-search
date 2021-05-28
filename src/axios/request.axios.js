@@ -9,7 +9,7 @@ const requestAxios = axios.create({
 });
 
 function authHandler() {
-  window.location.hash = `${process.env.APP_FB_PATH}/#auth/`;
+  window.location.hash = `${process.env.APP_FB_PATH}#auth/`;
   setTimeout(() => AuthModules.logout());
   setTimeout(() => authFormHanlerUtils());
 }
