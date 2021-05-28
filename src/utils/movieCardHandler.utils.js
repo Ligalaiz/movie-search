@@ -15,7 +15,7 @@ export default function movieCardHandlerUtils() {
     const { target } = e;
     const imdbID = target.closest('[data-id]').dataset.id;
 
-    window.location.hash = '#detail/';
+    window.location.hash = `${process.env.APP_FB_PATH}/#detail/`;
 
     setUtils('last', imdbID);
     setTimeout(() => {
